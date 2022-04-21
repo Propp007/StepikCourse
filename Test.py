@@ -1,9 +1,10 @@
-n, f = (input().split())
-print(n)
-print(f)
-
-def greet(name, surname):
-    print(f"Уважаемый {name} {surname}! Вы верно выполнили это задание!")
+set_proof = {chr(s) for s in range(ord('a'), ord('z') + 1)} | {str(s) for s in range(0, 10)} | {'@', '.', '_'}
 
 
-greet(n, f)
+def check_adress(text):
+    s = set(text)
+    print('ДА' if s <= set_proof and {'@', '.'} <= s else 'НЕТ')
+
+
+a = input().lower()
+check_adress(a)
